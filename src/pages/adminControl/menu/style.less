@@ -1,0 +1,145 @@
+@import '../../../../node_modules/antd/es/style/themes/default.less';
+@import './utils/utils.less';
+.title {
+  margin-bottom: 16px;
+  color: @heading-color;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.listItemStyle() {
+  :global(.ant-list-item) {
+    padding-right: 12px;
+    padding-left: 20px;
+    border-bottom: none;
+    position: relative;
+
+    &:after {
+      content: '';
+      width: calc(100% - 20px);
+      height: 1px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: @border-color-base;
+    }
+
+    .buttonBlock {
+      padding-top: 10px;
+
+      .buttonRow {
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+.groupTab {
+  .colWrapper {
+    background-color: #fff;
+
+    .listPageWrapper {
+      border-top: 1px solid @border-color-base;
+
+      .pageTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .listItemStyle();
+
+      .actionRow {
+        padding-right: 8px;
+
+      }
+    }
+
+    .listWrapper {
+      border-top: 1px solid @border-color-base;
+      .listItemStyle();
+
+      :global(.ant-list-item) {
+        &.active {
+          background-color: #F0FAFF;
+          border-left: 2px solid @primary-color;
+        }
+
+        &:hover {
+          background-color: #F0FAFF;
+        }
+      }
+
+      :global(.ant-list-item) {
+        align-items: flex-start;
+      }
+
+    }
+  }
+}
+
+.tableTab {
+  background-color: #fff;
+  padding: 22px 20px;
+}
+
+.pageHeaderContent {
+  position: relative;
+}
+
+.contentLink {
+  margin-top: 16px;
+
+  a {
+    margin-right: 32px;
+
+    &.darkPageType {
+      color: @text-color;
+    }
+
+    img {
+      width: 24px;
+    }
+  }
+
+  img {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: @screen-lg) {
+  .contentLink {
+    a {
+      margin-right: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .extraImg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .pageHeaderContent {
+    padding-bottom: 30px;
+  }
+
+  .contentLink {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 1000px;
+
+    a {
+      margin-right: 16px;
+    }
+
+    img {
+      margin-right: 4px;
+    }
+  }
+}
